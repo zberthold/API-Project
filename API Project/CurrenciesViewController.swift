@@ -10,8 +10,11 @@ import UIKit
 
 class CurrenciesViewController: UITableViewController {
 
+    var currencies = [[String: String]]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Currencies"
+        let query = "https://api.coindesk.com/v1/bpi/currentprice.json"
         // Do any additional setup after loading the view, typically from a nib.
     }
 
