@@ -13,6 +13,7 @@
 		B54009E320F537CC00CB5006 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B54009E220F537CC00CB5006 /* Assets.xcassets */; };
 		B54009E620F537CC00CB5006 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B54009E420F537CC00CB5006 /* LaunchScreen.storyboard */; };
 		B54009EE20F53A9200CB5006 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54009ED20F53A9200CB5006 /* SwiftyJSON.swift */; };
+		B5D12F2620F67FFB000CDDFA /* BitcoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D12F2520F67FFB000CDDFA /* BitcoinViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		B54009E520F537CC00CB5006 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B54009E720F537CC00CB5006 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B54009ED20F53A9200CB5006 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		B5D12F2520F67FFB000CDDFA /* BitcoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				B54009DB20F537CB00CB5006 /* AppDelegate.swift */,
 				B54009DD20F537CB00CB5006 /* CurrenciesViewController.swift */,
+				B5D12F2520F67FFB000CDDFA /* BitcoinViewController.swift */,
 				B54009DF20F537CB00CB5006 /* Main.storyboard */,
 				B54009E220F537CC00CB5006 /* Assets.xcassets */,
 				B54009E420F537CC00CB5006 /* LaunchScreen.storyboard */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B54009EE20F53A9200CB5006 /* SwiftyJSON.swift in Sources */,
+				B5D12F2620F67FFB000CDDFA /* BitcoinViewController.swift in Sources */,
 				B54009DE20F537CB00CB5006 /* CurrenciesViewController.swift in Sources */,
 				B54009DC20F537CB00CB5006 /* AppDelegate.swift in Sources */,
 			);

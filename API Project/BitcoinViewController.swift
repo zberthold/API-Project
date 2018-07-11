@@ -8,35 +8,41 @@
 
 import UIKit
 
-class CurrenciesViewController: UITableViewController {
-
-    var currencies = [[String: String]]()
+class BitcoinViewController: UITableViewController {
+    
+    var bitcoins = [[String: String]]()
+    var currency = [String: String]()
     var typesOfCurrencies = ["USD", "GBP", "EUR"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Currencies"
-        let query = "https://api.coindesk.com/v1/bpi/currentprice.json"
+        print(currency["name"]!)
+        self.title = "Current Rates"
+        let query = "https://api.coindesk.com/v1/bpi/currentprice/\(currency["name"]!).json"
+        print(query)
         if let url = URL(string: query) {
+            print("the second thing is the problem")
             if let data = try? Data(contentsOf: url) {
                 let json = try! JSON(data: data)
                 parse(json: json)
                 return
             }
         }
+        else{
+            print("you already know who it is")
+        }
         loadError()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
+    
     func parse (json: JSON){
-        for result in typesOfCurrencies{
-            var name = json["bpi"][result]["code"].stringValue
-            var description = json["bpi"][result]["description"].stringValue
-            let currency = ["name": name, "description": description]
-            currencies.append(currency)
-        }
+        var rate = ""
+        rate = json["bpi"][currency["name"]!]["rate"].stringValue
+        currency = ["rate": rate]
+        bitcoins.append(currency)
         tableView.reloadData()
     }
     
@@ -49,22 +55,14 @@ class CurrenciesViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return currencies.count
+        return bitcoins.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        let currency = currencies[indexPath.row]
-        cell.textLabel?.text = currency["name"]
-        cell.detailTextLabel?.text = currency["description"]
+        let bitcoin = bitcoins[indexPath.row]
+        cell.textLabel?.text = bitcoin["rate"]
         return cell
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let dvc = segue.destination as! BitcoinViewController
-        let index = tableView.indexPathForSelectedRow?.row
-        dvc.currency = currencies[index!]
-    }
-
 }
 
